@@ -1,0 +1,17 @@
+# python
+.ipynb_checkpoints
+__pycache__
+
+# data
+data
+
+# pytest
+.coverage
+pytest-coverage.txt
+pytest.xml
+
+# secrets
+.env
+
+# mac
+.DS_Store

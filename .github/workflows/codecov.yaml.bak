@@ -1,0 +1,41 @@
+---
+name: Code Coverage
+
+on:
+  pull_request:
+    branches: [dev, uat, master]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4.5.0
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install requirements
+        run: |
+          pip install -r requirements-dev.txt
+          pip install -e .
+      - name: Code coverage
+        run: |
+          pytest tests/tests.py \
+          --junitxml=pytest.xml \
+          --cov-report=term-missing:skip-covered \
+          --cov=python_api_template \
+          | tee pytest-coverage.txt
+      - name: Pytest coverage comment
+        uses: MishaKav/pytest-coverage-comment@main
+        with:
+          pytest-coverage-path: ./pytest-coverage.txt
+          junitxml-path: ./pytest.xml

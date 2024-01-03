@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "python_api_template"
+version = "0.1.0"
+description = ""
+authors = ["Karn Wong <karn@karnwong.me>"]
+readme = "README.md"
+packages = [
+    {include = "python_api_template"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+transformers = "^4.35.2"
+torch = "^2.1.1"
+fastapi = "^0.104.1"
+uvicorn = "^0.24.0.post1"
+pydantic = "^2.5.2"
+
+
+[tool.poetry.group.dev.dependencies]
+jupyter = "^1.0.0"
+polars = "^0.19.19"
+pyarrow = "^14.0.1"
+pytest = "^7.4.3"
+pytest-xdist = "^3.5.0"
+pytest-cov = "^4.1.0"
+httpx = "^0.25.2"
+seaborn = "^0.13.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

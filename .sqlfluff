@@ -1,0 +1,9 @@
+[sqlfluff]
+dialect = postgres
+templater = jinja
+ignore = templating
+ignore_templated_areas = True
+exclude_rules = L029,L028,L016,L027,L011,ST06
+
+[sqlfluff:templater:jinja]
+apply_dbt_builtins = True
