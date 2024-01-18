@@ -19,7 +19,7 @@ pydantic = "^2.5.2"
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
-polars = "^0.19.19"
+polars = "^0.20.5"
 pyarrow = "^14.0.1"
 pytest = "^7.4.3"
 pytest-xdist = "^3.5.0"
