@@ -10,7 +10,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = "^3.11"
-transformers = "^4.35.2"
+transformers = "^4.37.1"
 torch = "^2.1.1"
 fastapi = "^0.104.1"
 uvicorn = "^0.24.0.post1"
