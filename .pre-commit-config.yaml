@@ -68,8 +68,6 @@ repos:
     hooks:
       - id: poetry-export
         args: ["--without-hashes", "-f", "requirements.txt", "-o", "requirements.txt"]
-      - id: poetry-export
-        args: ["--with", "dev", "--without-hashes", "-f", "requirements.txt", "-o", "requirements-dev.txt"]
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.7.1
     hooks:
@@ -78,15 +76,15 @@ repos:
     rev: 0.6.1
     hooks:
       - id: nbstripout
-  # - repo: local
-  #   hooks:
-  #     - id: mypy
-  #       name: mypy
-  #       entry: "bash ./tests/run_mypy.sh"
-  #       language: system
-  #       types: [python]
-  #       pass_filenames: false
-  #       require_serial: true
+  - repo: local
+    hooks:
+      - id: mypy
+        name: mypy
+        entry: "poetry run mypy python_api_template"
+        language: system
+        types: [python]
+        pass_filenames: false
+        require_serial: true
   # - repo: local
   #   hooks:
   #     - id: pytest
