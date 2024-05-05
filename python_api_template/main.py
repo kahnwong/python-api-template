@@ -4,7 +4,9 @@ from fastapi import FastAPI
 
 from python_api_template.model.request import RequestItem
 from python_api_template.model.response import ResponseItem
-from python_api_template.utils.log import logger
+from python_api_template.utils.log import init_logger
+
+logger = init_logger(__name__)
 
 app = FastAPI(title="python_api_template")
 
