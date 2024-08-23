@@ -28,7 +28,7 @@ seaborn = "^0.13.0"
 
 
 [tool.poetry.group.tests.dependencies]
-mypy = "^1.10.0"
+mypy = "^1.11.1"
 
 [build-system]
 requires = ["poetry-core"]
