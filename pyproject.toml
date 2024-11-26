@@ -1,35 +1,28 @@
-[tool.poetry]
-name = "python_api_template"
+[project]
+name = "python-api-template"
 version = "0.1.0"
-description = ""
-authors = ["Karn Wong <karn@karnwong.me>"]
+description = "Add your description here"
 readme = "README.md"
-packages = [
-    {include = "python_api_template"}
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.5",
+    "pydantic>=2.10.1",
+    "uvicorn>=0.32.1",
 ]
 
-[tool.poetry.dependencies]
-python = "^3.11"
-fastapi = "^0.115.4"
-uvicorn = "^0.31.1"
-pydantic = "^2.9.2"
-
-
-[tool.poetry.group.dev.dependencies]
-jupyter = "^1.1.1"
-polars = "^1.13.0"
-pyarrow = "^14.0.1"
-pytest = "^8.3.3"
-pytest-xdist = "^3.5.0"
-pytest-cov = "^6.0.0"
-httpx = "^0.27.2"
-seaborn = "^0.13.0"
-
-
-
-[tool.poetry.group.tests.dependencies]
-mypy = "^1.12.1"
-
 [build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.uv]
+dev-dependencies = [
+    "httpx>=0.27.2",
+    "jupyter>=1.1.1",
+    "polars>=1.15.0",
+    "pyarrow>=18.1.0",
+    "pytest>=8.3.3",
+    "pytest-cov>=6.0.0",
+    "pytest-xdist>=3.6.1",
+    "seaborn>=0.13.2",
+    "mypy>=1.13.0",
+]
