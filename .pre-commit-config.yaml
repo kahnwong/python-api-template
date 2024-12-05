@@ -20,7 +20,6 @@ repos:
       # -- python -- #
       - id: ruff-check
       - id: ruff-format
-      - id: uv-export
       - id: mypy
       - id: nbstripout
       - id: yamlfmt
